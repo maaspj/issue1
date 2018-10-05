@@ -1,13 +1,12 @@
 \documentclass[journal,noindent,headline,12pt]{paper}
-\usepackage{docmute}
 \usepackage[rmargin=3.0cm]{geometry}
 \usepackage[utf8]{inputenc}
 \usepackage[english]{babel}
 \usepackage{microtype}
 \usepackage{xcolor}
+\usepackage{lipsum} % for dummy text only
+\usepackage{graphicx}
 \usepackage[justification=centering]{caption}
-
-\usepackage{setspace}
 \usepackage{hyperref}
 \usepackage{xcolor}
 \hypersetup{
@@ -18,14 +17,13 @@
 }
 \hypersetup{pdfstartview={XYZ null null 0.90}}
 \usepackage{footnotebackref} 
-\usepackage{booktabs}
-\usepackage{multirow}
-\usepackage{longtable,lscape}
-\usepackage{rotating}
-\usepackage{multirow,multicol}
-\usepackage{siunitx}
+%\usepackage{booktabs}
+%\usepackage{multirow}
+%\usepackage{longtable,lscape}
+%\usepackage{rotating}
+%\usepackage{multirow,multicol}
+%\usepackage{siunitx}
 \usepackage[natbibapa]{apacite}
-\usepackage{graphicx}
 \usepackage{ltablex}
 \usepackage{amsmath}
 \usepackage{mathtools}
@@ -45,26 +43,11 @@
 \usepackage{longtable}
 \usepackage{pdflscape}
 \usepackage{textcomp}
-\usepackage{authblk}
+%\usepackage{authblk}
 \usepackage{blindtext}
-\usepackage{standalone}
-\newcommand{\Msun}{{\rm M}_{\odot}}
-\newcommand{\brems}{{bremsstrahlung}\xspace}
-\newcommand{\Mvir}{{\rm M_{vir}}}
-\newcommand{\Rvir}{{\rm R_{vir}}}
-\newcommand{\Vvir}{{\rm V_{vir}}}
-\newcommand{\Tvir}{{\rm T_{vir}}}
-\newcommand{\LX}{{{\rm L_X}\,}}
-\newcommand{\rhoc}{\rho_{\rm crit}}
-\newcommand{\dd}{{\rm {d}}}
-\newcommand{\DF}{{\small DF}\xspace}
 %\usepackage{longtable,tabu}
-\usepackage[colorinlistoftodos]{todonotes}
 \usepackage{lipsum}
 \usepackage{caption}
-\sisetup{input-symbols = ()}
-\providecommand{\keywords}[1]{\textbf{\textit{Keywords---}} #1}
-\providecommand{\JEL}[1]{\textbf{\textit{JEL Classification---}} #1}
 \usepackage{etoolbox}
 
 \usepackage{kantlipsum} % just for the example
@@ -84,40 +67,52 @@
 %\usepackage{pdfpages}
 
 %\usepackage{lipsum,atbegshi,etoolbox}% http://ctan.org/pkg/{lipsum,atbegshi,etoolbox}
-\makeatletter
-\newcommand{\discardpages}[1]{% \discardpages{<csv list>}
-	\xdef\discard@pages{#1}% Store pages to discard
-	\AtBeginShipout{% At shipout, decide whether to discard page/not
-		\renewcommand*{\do}[1]{% How to handle each page entry in csv list
-			\ifnum\value{page}=##1\relax%
-			\AtBeginShipoutDiscard% Discard page/not
-			\gdef\do####1{}% Do nothing further
-			\fi%
-		}%
-		\expandafter\docsvlist\expandafter{\discard@pages}% Process list of pages to discard
-	}%
-}
-\newif\ifkeeppage
-\newcommand{\keeppages}[1]{% \keeppages{<csv list>}
-	\xdef\keep@pages{#1}% Store pages to keep
-	\AtBeginShipout{% At shipout, decide whether to discard page/not
-		\keeppagefalse%
-		\renewcommand*{\do}[1]{% How to handle each page entry in csv list
-			\ifnum\value{page}=##1\relax%
-			\keeppagetrue% Page should be kept
-			\gdef\do####1{}% Do nothing further
-			\fi%
-		}%
-		\expandafter\docsvlist\expandafter{\keep@pages}% Process list of pages to keep
-		\ifkeeppage\else\AtBeginShipoutDiscard\fi% Discard page/not
-	}%
-}
-\makeatother
+%\makeatletter
+%\newcommand{\discardpages}[1]{% \discardpages{<csv list>}
+%	\xdef\discard@pages{#1}% Store pages to discard
+%	\AtBeginShipout{% At shipout, decide whether to discard page/not
+%		\renewcommand*{\do}[1]{% How to handle each page entry in csv list
+%			\ifnum\value{page}=##1\relax%
+%			\AtBeginShipoutDiscard% Discard page/not
+%			\gdef\do####1{}% Do nothing further
+%			\fi%
+%		}%
+%		\expandafter\docsvlist\expandafter{\discard@pages}% Process list of pages to discard
+%	}%
+%}
+%\newif\ifkeeppage
+%\newcommand{\keeppages}[1]{% \keeppages{<csv list>}
+%	\xdef\keep@pages{#1}% Store pages to keep
+%	\AtBeginShipout{% At shipout, decide whether to discard page/not
+%		\keeppagefalse%
+%		\renewcommand*{\do}[1]{% How to handle each page entry in csv list
+%			\ifnum\value{page}=##1\relax%
+%			\keeppagetrue% Page should be kept
+%			\gdef\do####1{}% Do nothing further
+%			\fi%
+%		}%
+%		\expandafter\docsvlist\expandafter{\keep@pages}% Process list of pages to keep
+%		\ifkeeppage\else\AtBeginShipoutDiscard\fi% Discard page/not
+%	}%
+%}
+%\makeatother
 %\discardpages{1,2,3,4,10,11,12,13,14}% Discard these pages.
 %\usepackage{kantlipsum} % just for the example
-\makeatother
+%\makeatother
 
-%end the preamble and start the document
+\usepackage{tikz}
+\usepackage{lipsum}
+\newcommand\copyrighttext{%
+	\footnotesize Maastricht Policy Journal. 1, 2018. All rights reserved.}
+\newcommand\copyrightnotice{%
+	\begin{tikzpicture}[remember picture,overlay]
+	\node[anchor=south,yshift=10pt] at (current page.south) {\fbox{\parbox{\dimexpr\textwidth-\fboxsep-\fboxrule\relax}{\copyrighttext}}};
+	\end{tikzpicture}%
+}
+
+
+
+
 \begin{document}
 
 \begin{titlepage} 
@@ -153,9 +148,9 @@
 
 \phantomsection
 \journalpart[Research articles]{}
-\input{article1}
-\input{article2}
-\input{article3}
+\include{article1}
+\include{article2}
+\include{article3}
 %\includepdf[pages=1-]{paper1.pdf}
 % ARTICLE 2
 
@@ -181,7 +176,7 @@
 
 
 %next line adds the Bibliography to the contents page
-\addcontentsline{toc}{chapter}{Bibliography}
+%\addcontentsline{toc}{chapter}{Bibliography}
 %uncomment next line to change bibliography name to references
 %\renewcommand{\bibname}{References}
 

@@ -1,0 +1,82 @@
+\begin{thebibliography}{}
+
+\bibitem [\protect \citeauthoryear {%
+Antol{\'\i}n%
+\ \BBA {} Whitehouse%
+}{%
+Antol{\'\i}n%
+\ \BBA {} Whitehouse%
+}{%
+{\protect \APACyear {2009}}%
+}]{%
+antolin2009filling}
+\APACinsertmetastar {%
+antolin2009filling}%
+\begin{APACrefauthors}%
+Antol{\'\i}n, P.%
+\BCBT {}\ \BBA {} Whitehouse, E.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2009}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Filling the pension gap: coverage and value of voluntary
+  retirement savings} {Filling the pension gap: coverage and value of voluntary
+  retirement savings}.{\BBCQ}
+\newblock
+
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Arntz%
+, Gregory%
+\BCBL {}\ \BBA {} Zierahn%
+}{%
+Arntz%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2017}}%
+}]{%
+arntz2017revisiting}
+\APACinsertmetastar {%
+arntz2017revisiting}%
+\begin{APACrefauthors}%
+Arntz, M.%
+, Gregory, T.%
+\BCBL {}\ \BBA {} Zierahn, U.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2017}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Revisiting the risk of automation} {Revisiting the risk
+  of automation}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Economics Letters}{159}{}{157--160}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Penfold%
+\ \protect \BOthers {.}}{%
+Penfold%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2017}}%
+}]{%
+penfold2017regionalism}
+\APACinsertmetastar {%
+penfold2017regionalism}%
+\begin{APACrefauthors}%
+Penfold, E.%
+\BCBT {}\ \BOthersPeriod {.}
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2017}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Regionalism in the Southern African Development
+  Community: Integration for better health?} {Regionalism in the southern
+  african development community: Integration for better health?}{\BBCQ}
+\newblock
+
+\PrintBackRefs{\CurrentBib}
+
+\end{thebibliography}
